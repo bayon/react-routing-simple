@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import RouteConfigExample from './example';
 import AuthExample from './example-auth';
+import SimpleRedirect from './simple-redirect';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-<AuthExample />, 
+<SimpleRedirect />, 
 document.getElementById('root')
 );
 
