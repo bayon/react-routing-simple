@@ -3,9 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
 } from "react-router-dom";
 
+import Sideview from './sideview.jsx';
 // Some folks find value in a centralized route config.
 // A route config is just data. React is great at mapping
 // data into components, and <Route> is a component.
@@ -48,9 +52,12 @@ export default function RouteConfigExample() {
         </ul>
 
         <Switch>
-          {routes.map((route, i) => (
+         {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} {...route} />
-          ))}
+          ))} 
+           
+            
+          
         </Switch>
       </div>
     </Router>
@@ -60,7 +67,9 @@ export default function RouteConfigExample() {
 // A special wrapper for <Route> that knows how to
 // handle "sub"-routes by passing them in a `routes`
 // prop to the component it renders.
+//this.props.history.push('/dashboard');
 function RouteWithSubRoutes(route) {
+   
   return (
     <Route
       path={route.path}
@@ -73,6 +82,13 @@ function RouteWithSubRoutes(route) {
 }
 
 function Sandwiches() {
+  //this.props.history.push('/dashboard');
+  let history = useHistory();
+  console.log("history:",history);
+  let location  = useLocation();
+  console.log("location:",location);
+  history.push("/sideview.jsx");
+  //location.pathname = "/sideview";
   return <h2>Sandwiches</h2>;
 }
 
