@@ -35,7 +35,7 @@ function ForgotButton() {
       <button
         onClick={() => history.push("/sideview")}
       >
-        Forgot Password
+        Particle Animation
       </button>
     </p>
   )  
