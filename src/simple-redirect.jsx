@@ -11,6 +11,7 @@ import {
 
  
 import Sideview from './sideview';
+import Other from './other';
 
 export default function SimpleRedirect() {
   return (
@@ -20,6 +21,9 @@ export default function SimpleRedirect() {
         <Switch>
           <Route path="/sideview">
             <Sideview />
+          </Route>
+          <Route path="/other">
+            <Other></Other>
           </Route>
         </Switch>
       </div>
@@ -36,6 +40,11 @@ function ForgotButton() {
         onClick={() => history.push("/sideview")}
       >
         Particle Animation
+      </button>
+      <button
+        onClick={() => history.push("/other")}
+      >
+        Other
       </button>
     </p>
   )  
